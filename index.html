@@ -1,204 +1,360 @@
-<!DOCTYPE html>
-<!-- saved from url=(0014)about:internet -->
+<!doctype html>
+
 <html lang="en">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Nicolò Verardo</title>
 
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <link href="./files/css" rel="stylesheet" />
-    <link rel="stylesheet" href="./files/styles.css" />
-    <script src="./files/scripts.js"></script>
-    <meta name="theme-color" content="#e8eaef" />
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com/" />
-    <meta name="description" content="Nicolò Verardo - Personal Page" />
-    <link rel="icon" type="image/png" href="files/profile.png" sizes="32x32" />
-    <script type="application/ld+json">
-      {
-        "@context": "http://schema.org/",
-        "@type": "Person",
-        "name": "Nicolò Verardo",
-        "image": "profile.png",
-        "sameAs": ["https://linkedin.com","https://twitter.com","https://github.com"],
-        "jobTitle": "Software Developer",
-        <!-- "worksFor": {
-          "@type": "Organization",
-          "name": "Atomic Studio"
-        }   -->
+    <style>
+      /* -------------------------
+         SYSTEM FONT
+      ------------------------- */
+
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display",
+          system-ui, sans-serif;
       }
-    </script>
+
+      /* -------------------------
+         THEME VARIABLES
+      ------------------------- */
+
+      :root {
+        --bg: #ffffff;
+        --text: #0f172a;
+        --muted: #6b7280;
+        --border: #e5e7eb;
+      }
+
+      [data-theme="dark"] {
+        --bg: #0b0b0b;
+        --text: #f5f5f5;
+        --muted: #9ca3af;
+        --border: #1f2937;
+      }
+
+      /* -------------------------
+         BASE
+      ------------------------- */
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background:
+          radial-gradient(
+            circle at 20% 10%,
+            rgba(0, 0, 0, 0.03),
+            transparent 40%
+          ),
+          var(--bg);
+        color: var(--text);
+        font-size: 18px;
+        line-height: 1.65;
+        transition:
+          background 0.25s ease,
+          color 0.25s ease;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+      }
+
+      p {
+        max-width: 60ch;
+      }
+
+      a {
+        color: var(--text);
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      /* -------------------------
+         LAYOUT
+      ------------------------- */
+
+      .container {
+        max-width: 720px;
+        margin: auto;
+        padding: 100px 20px 80px;
+      }
+
+      /* -------------------------
+         HERO
+      ------------------------- */
+
+      .hero h1 {
+        font-size: 44px;
+        margin: 0 0 10px;
+        letter-spacing: -0.025em;
+      }
+
+      .hero p {
+        font-size: 22px;
+        color: var(--muted);
+        margin-bottom: 18px;
+      }
+
+      .hero {
+        margin-bottom: 80px;
+        max-width: 520px;
+      }
+
+      /* -------------------------
+         HERO ICON LINKS
+      ------------------------- */
+
+      .social-icons {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        margin-top: 8px;
+      }
+
+      .social-icons a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--muted);
+        transition:
+          color 0.2s ease,
+          transform 0.2s ease;
+      }
+
+      .social-icons a:hover {
+        color: var(--text);
+        transform: translateY(-2px);
+      }
+
+      .social-icons svg {
+        width: 22px;
+        height: 22px;
+        stroke-width: 1.75;
+      }
+
+      /* -------------------------
+         SECTIONS
+      ------------------------- */
+
+      section {
+        margin-top: 60px;
+        padding-top: 40px;
+        border-top: 1px solid var(--border);
+      }
+
+      .section-title {
+        font-weight: 600;
+        margin-bottom: 16px;
+        color: var(--muted);
+      }
+
+      .project {
+        padding: 14px 0;
+      }
+
+      /* -------------------------
+         DARK MODE TOGGLE
+      ------------------------- */
+
+      .theme-toggle {
+        position: fixed;
+        top: 22px;
+        right: 22px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 1px solid var(--border);
+        background: var(--bg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.25s ease;
+      }
+
+      .theme-toggle:hover {
+        transform: scale(1.08);
+      }
+
+      .theme-toggle svg {
+        width: 18px;
+        height: 18px;
+        stroke: var(--text);
+        transition: transform 0.25s ease;
+      }
+
+      .theme-toggle:hover svg {
+        transform: rotate(20deg);
+      }
+
+      /* -------------------------
+         FADE ANIMATION
+      ------------------------- */
+
+      .fade {
+        opacity: 0;
+        transform: translateY(8px);
+        transition: all 0.6s ease;
+      }
+
+      .fade.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
   </head>
-  <body class="antialiased bg-back leading-normal font-text text-front">
-    <section class="container flex flex-wrap pt-4 my-8">
-      <div class="w-full lg:w-1/3 lg:border-r border-line lg:px-8 xl:px-12">
-        <div class="flex flex-col h-full justify-between">
-          <div>
-            <h2
-              class="font-header font-light text-front text-xl leading-none mb-4"
-            >
-              Software Developer
-            </h2>
-            <h1
-              class="font-header font-black text-front text-5xl leading-none break-words mb-6"
-            >
-              Nicolò Verardo
-            </h1>
-            <div class="relative inline-block">
-              <img
-                src="./files/profile.png"
-                alt="Nicolò Verardo"
-                class="block rounded-full relative z-10 w-56 h-56 lg:w-36 lg:h-36"
-              />
-            </div>
-            <br />
-            <div class="inline-flex bg-front mt-6 w-auto">
-              <span class="text-lead border-r-2 border-back pt-2 px-3">
-                <span class="inline-block h-4 w-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
-                    <path
-                      d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"
-                    ></path>
-                  </svg>
-                </span>
-              </span>
-              <span class="text-back font-header font-bold py-1 px-3 text-lg"
-                >Milan, Italy</span
-              >
-            </div>
-          </div>
-          <footer class="pt-8 pb-12 lg:py-0">
-            <br />
-            <h5 class="section-header pb-3">Connect</h5>
-            <div class="connect-icons">
-              <a
-                href="https://www.linkedin.com/in/nicoloverardo/en"
-                class="connect-icon"
-                target="_blank"
-                ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                  <path
-                    d="M100.3 480H7.4V180.9h92.9V480zM53.8 140.1C24.1 140.1 0 115.5 0 85.8 0 56.1 24.1 32 53.8 32c29.7 0 53.8 24.1 53.8 53.8 0 29.7-24.1 54.3-53.8 54.3zM448 480h-92.7V334.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V480h-92.8V180.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V480z"
-                  ></path></svg
-              ></a>
-              <a
-                href="https://twitter.com/nicoloverardo"
-                class="connect-icon"
-                target="_blank"
-                ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                  <path
-                    d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"
-                  ></path></svg
-              ></a>
-              <a
-                href="https://github.com/nicoloverardo"
-                class="connect-icon"
-                target="_blank"
-                ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
-                  <path
-                    d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"
-                  ></path></svg
-              ></a>
-              <a
-                href="https://instagram.com/nicoloverardo"
-                class="connect-icon"
-                target="_blank"
-                ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                  <path
-                    d="M14.52,2.469H5.482c-1.664,0-3.013,1.349-3.013,3.013v9.038c0,1.662,1.349,3.012,3.013,3.012h9.038c1.662,0,3.012-1.35,3.012-3.012V5.482C17.531,3.818,16.182,2.469,14.52,2.469 M13.012,4.729h2.26v2.259h-2.26V4.729z M10,6.988c1.664,0,3.012,1.349,3.012,3.012c0,1.664-1.348,3.013-3.012,3.013c-1.664,0-3.012-1.349-3.012-3.013C6.988,8.336,8.336,6.988,10,6.988 M16.025,14.52c0,0.831-0.676,1.506-1.506,1.506H5.482c-0.831,0-1.507-0.675-1.507-1.506V9.247h1.583C5.516,9.494,5.482,9.743,5.482,10c0,2.497,2.023,4.52,4.518,4.52c2.494,0,4.52-2.022,4.52-4.52c0-0.257-0.035-0.506-0.076-0.753h1.582V14.52z"
-                  ></path></svg
-              ></a>
-            </div>
-          </footer>
+
+  <body>
+    <div class="theme-toggle" id="themeToggle">
+      <i id="themeIcon" data-lucide="moon"></i>
+    </div>
+
+    <div class="container">
+      <div class="hero fade">
+        <h1>Nicolò Verardo</h1>
+        <p>Software developer</p>
+
+        <div class="social-icons">
+          <a
+            href="https://linkedin.com/in/nicoloverardo"
+            target="_blank"
+            aria-label="LinkedIn"
+          >
+            <i data-lucide="linkedin"></i>
+          </a>
+
+          <a
+            href="https://github.com/nicoloverardo"
+            target="_blank"
+            aria-label="GitHub"
+          >
+            <i data-lucide="github"></i>
+          </a>
+
+          <a
+            href="https://twitter.com/nicoloverardo"
+            target="_blank"
+            aria-label="Twitter"
+          >
+            <i data-lucide="twitter"></i>
+          </a>
+
+          <a href="/files/Verardo-CV.pdf" aria-label="CV" target="_blank">
+            <i data-lucide="file-text"></i>
+          </a>
         </div>
       </div>
-      <div class="w-full lg:w-2/3 lg:pl-8 xl:pl-12">
-        <div class="flex pb-8">
-          <div class="w-1/2 pr-4 lg:pr-12 border-r border-line">
-            <h5 class="section-header pb-0">Company</h5>
-            <h5 class="section-header pb-0">
-              <a
-                href="https://www.linkedin.com/company/european-central-bank/"
-                target="_blank"
-              >
-                <image
-                  width="150"
-                  height="150"
-                  src="data:image/jpeg;base64,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"
-                  alt="Arianet"
-                />
-              </a>
-            </h5>
-            <!-- <div class="font-header font-semibold text-xs uppercase pt-2">
-<span class="dot status-green"></span> Available for hire
-</div> -->
-          </div>
-          <div class="w-1/2 pl-4 lg:pl-12">
-            <h5 class="section-header pb-0">Open source</h5>
-            <div
-              class="font-header font-light text-2xl text-front leading-tight"
-            >
-              Matrix Regression
-            </div>
-            <div class="pt-1 font-light text-sm">
-              <p class="pt-1">
-                Multi-label text classification algorithm written in Python.
-              </p>
-              <br />
-              <a
-                href="https://github.com/nicoloverardo/matrix_regression"
-                target="_blank"
-                ><img
-                  alt="GitHub"
-                  src="https://img.shields.io/badge/GitHub-100000?style=flat&logo=github&logoColor=white"
-              /></a>
-              <a href="https://pypi.org/project/matrixreg/" target="_blank"
-                ><img
-                  alt="PyPI"
-                  src="https://img.shields.io/pypi/v/matrixreg?color=blue"
-              /></a>
-            </div>
-          </div>
-        </div>
-        <br />
-        <h5 class="section-header pb-3">About</h5>
-        <div class="font-text text-sm pb-6">
-          <p class="pb-6">
-            Software Developer with Data Science knowledge.<br />MSc in Data
-            Science and Economics at
-            <a href="http://dse.unimi.it" target="_blank">Unimi</a>.<br />
-            I love to share my code on
-            <a href="http://github.com/nicoloverardo" target="_blank">GitHub</a
-            >, play tennis and mix some good beats on
-            <a href="http://mixcloud.com/nicoloverardo" target="_blank"
-              >MixCloud</a
-            >.<br /><br />
-            You can grab my CV
-            <a
-              href="https://raw.githubusercontent.com/nicoloverardo/surge-personal-website/main/files/Verardo-CV.pdf"
-              download="https://raw.githubusercontent.com/nicoloverardo/surge-personal-website/main/files/Verardo-CV.pdf"
+
+      <section class="fade">
+        <div class="section-title">/about</div>
+
+        <p>
+          Currently working as an IT Application Development Specialist at the
+          European Central Bank.
+        </p>
+
+        <p>
+          Doing full-stack development on the platform that powers the
+          <a
+            href="https://www.bankingsupervision.europa.eu/activities/stresstests/html/index.en.html"
+            target="_blank"
+            >Stress Test</a
+          >
+          exercises for commercial banks in the Eurozone.
+        </p>
+      </section>
+
+      <section class="fade">
+        <div class="section-title">/projects</div>
+
+        <div class="project">
+          <strong
+            ><a
+              href="https://github.com/nicoloverardo/matrix_regression"
               target="_blank"
-              >here</a
-            >.
-          </p>
+              >matrix-regression</a
+            ></strong
+          >
+          — Python implementation of a multi-label text-classification algorithm
+          for online learning.
         </div>
-        <br />
-        <footer class="bg-back pt-8 pb-12 lg:py-0">
-          <div class="w-3/3 text-front-light font-footer text-xs">
-            Original theme:
-            <a
-              href="https://weeby.studio/intro"
-              target="_blank"
-              class="text-front-light"
-              >Intro</a
-            >
-            <br />
-            © 2020 Scott Johnson. All rights reserved.
-          </div>
-        </footer>
-      </div>
-    </section>
+      </section>
+
+      <section class="fade">
+        <div class="section-title">/notes</div>
+
+        <p>
+          Tennis player, F1 enthusiast, and mixing some good beats on
+          <strong
+            ><a href="http://mixcloud.com/nicoloverardo" target="_blank"
+              >Mixcloud</a
+            ></strong
+          >. Always ready to fiddle with new tech.
+        </p>
+      </section>
+    </div>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+      /* THEME ICONS */
+
+      lucide.createIcons();
+
+      const toggle = document.getElementById("themeToggle");
+      const icon = document.getElementById("themeIcon");
+
+      function updateIcon(theme) {
+        // Remove old SVG inside the toggle
+        themeIcon.innerHTML = ""; 
+        // Set new icon name on the <i>
+        themeIcon.setAttribute("data-lucide", theme === "dark" ? "sun" : "moon");
+        // Re-render Lucide icon inside that container
+        lucide.createIcons({parent: themeIcon});
+      }
+
+      function setTheme(theme) {
+        document.documentElement.setAttribute("data-theme", theme);
+        localStorage.setItem("theme", theme);
+        updateIcon(theme);
+      }
+
+      const saved = localStorage.getItem("theme");
+
+      if (saved) {
+        setTheme(saved);
+      } else {
+        setTheme(
+          window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light",
+        );
+      }
+
+      toggle.onclick = () => {
+        const current = document.documentElement.getAttribute("data-theme");
+        setTheme(current === "dark" ? "light" : "dark");
+      };
+
+      /* FADE */
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      });
+
+      document.querySelectorAll(".fade").forEach((el) => {
+        observer.observe(el);
+      });
+    </script>
   </body>
 </html>
