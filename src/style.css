@@ -1,253 +1,249 @@
-      /* -------------------------
+/* -------------------------
          SYSTEM FONT
       ------------------------- */
 
-      /* -------------------------
+/* -------------------------
          THEME VARIABLES
       ------------------------- */
 
-      :root {
-        --bg: #fff;
-        --text: #0f172a;
-        --muted: #6b7280;
-        --border: #e5e7eb;
-      }
+:root {
+  --bg: #fff;
+  --text: #0f172a;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+}
 
-      [data-theme="dark"] {
-        --bg: #0b0b0b;
-        --text: #f5f5f5;
-        --muted: #9ca3af;
-        --border: #1f2937;
-      }
+[data-theme="dark"] {
+  --bg: #0b0b0b;
+  --text: #f5f5f5;
+  --muted: #9ca3af;
+  --border: #1f2937;
+}
 
-      /* -------------------------
+/* -------------------------
          BASE
       ------------------------- */
 
-      html {
-        scroll-behavior: smooth;
-      }
+html {
+  scroll-behavior: smooth;
+}
 
-      body {
-        font-family:
-          -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display",
-          system-ui, sans-serif;
-        margin: 0;
-        background:
-          radial-gradient(
-            circle at 20% 10%,
-            rgb(0 0 0 / 3%),
-            transparent 40%
-          ),
-          var(--bg);
-        color: var(--text);
-        font-size: 18px;
-        line-height: 1.65;
-        transition:
-          background 0.25s ease,
-          color 0.25s ease;
-        -webkit-font-smoothing: antialiased;
-        text-rendering: optimizelegibility;
-      }
+body {
+  font-family:
+    -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display",
+    system-ui, sans-serif;
+  margin: 0;
+  background:
+    radial-gradient(circle at 20% 10%, rgb(0 0 0 / 3%), transparent 40%),
+    var(--bg);
+  color: var(--text);
+  font-size: 18px;
+  line-height: 1.65;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizelegibility;
+}
 
-      p {
-        max-width: 60ch;
-      }
+p {
+  max-width: 60ch;
+}
 
-      a {
-        color: var(--text);
-        text-decoration: none;
-      }
+a {
+  color: var(--text);
+  text-decoration: none;
+}
 
-      a:hover {
-        text-decoration: underline;
-      }
+a:hover {
+  text-decoration: underline;
+}
 
-      /* -------------------------
+/* -------------------------
          LAYOUT
       ------------------------- */
 
-      .container {
-        max-width: 720px;
-        margin: auto;
-        padding: 100px 20px 80px;
-      }
+.container {
+  max-width: 720px;
+  margin: auto;
+  padding: 100px 20px 80px;
+}
 
-      /* -------------------------
+/* -------------------------
          HERO
       ------------------------- */
 
-      .hero {
-        margin-bottom: 40px;
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        min-width: 0;
-      }
+.hero {
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 0;
+}
 
-      .hero-content {
-        display: flex;
-        gap: 40px;
-        align-items: flex-start;
-        margin-bottom: 18px;
-        min-width: 0;
-      }
+.hero-content {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  margin-bottom: 18px;
+  min-width: 0;
+}
 
-      .hero-text {
-        flex: 1;
-        min-width: 0;
-      }
+.hero-text {
+  flex: 1;
+  min-width: 0;
+}
 
-      .hero h1 {
-        font-size: 44px;
-        margin: 0 0 10px;
-        letter-spacing: -0.025em;
-      }
+.hero h1 {
+  font-size: 44px;
+  margin: 0 0 10px;
+  letter-spacing: -0.025em;
+}
 
-      .hero p {
-        font-size: 22px;
-        color: var(--muted);
-        margin: 0;
-      }
+.hero p {
+  font-size: 22px;
+  color: var(--muted);
+  margin: 0;
+}
 
-      .profile-pic {
-        width: 140px;
-        height: 140px;
-        border-radius: 50%;
-        object-fit: cover;
-        flex-shrink: 0;
-      }
+.profile-pic {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
 
-      @media (max-width: 640px) {
-        .hero-content {
-          flex-direction: column;
-          gap: 20px;
-          align-items: center;
-        }
+@media (width <= 640px) {
+  .hero-content {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
 
-        .hero-text {
-          text-align: center;
-        }
+  .hero-text {
+    text-align: center;
+  }
 
-        .hero h1 {
-          font-size: 32px;
-        }
+  .hero h1 {
+    font-size: 32px;
+  }
 
-        .hero p {
-          font-size: 18px;
-        }
+  .hero p {
+    font-size: 18px;
+  }
 
-        .profile-pic {
-          width: 120px;
-          height: 120px;
-        }
+  .profile-pic {
+    width: 120px;
+    height: 120px;
+  }
 
-        .social-icons {
-          justify-content: center;
-        }
-      }
+  .social-icons {
+    justify-content: center;
+  }
+}
 
-      /* -------------------------
+/* -------------------------
          HERO ICON LINKS
       ------------------------- */
 
-      .social-icons {
-        display: flex;
-        gap: 20px;
-        align-items: center;
-        margin-top: 8px;
-      }
+.social-icons {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-top: 8px;
+}
 
-      .social-icons a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--muted);
-        transition:
-          color 0.2s ease,
-          transform 0.2s ease;
-      }
+.social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
 
-      .social-icons a:hover {
-        color: var(--text);
-        transform: translateY(-2px);
-      }
+.social-icons a:hover {
+  color: var(--text);
+  transform: translateY(-2px);
+}
 
-      .social-icons svg {
-        width: 22px;
-        height: 22px;
-        stroke-width: 1.75;
-      }
+.social-icons svg {
+  width: 22px;
+  height: 22px;
+  stroke-width: 1.75;
+}
 
-      /* -------------------------
+/* -------------------------
          SECTIONS
       ------------------------- */
 
-      section {
-        margin-top: 40px;
-        padding-top: 40px;
-        border-top: 1px solid var(--border);
-        width: 100%;
-        min-width: 0;
-      }
+section {
+  margin-top: 40px;
+  padding-top: 40px;
+  border-top: 1px solid var(--border);
+  width: 100%;
+  min-width: 0;
+}
 
-      .section-title {
-        font-weight: 600;
-        margin-bottom: 16px;
-        color: var(--muted);
-      }
+.section-title {
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: var(--muted);
+}
 
-      .project {
-        padding: 14px 0;
-      }
+.project {
+  padding: 14px 0;
+}
 
-      /* -------------------------
+/* -------------------------
          DARK MODE TOGGLE
       ------------------------- */
 
-      .theme-toggle {
-        position: fixed;
-        top: 22px;
-        right: 22px;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        border: 1px solid var(--border);
-        background: var(--bg);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        transition: all 0.25s ease;
-        z-index: 1000;
-      }
+.theme-toggle {
+  position: fixed;
+  top: 22px;
+  right: 22px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  z-index: 1000;
+}
 
-      .theme-toggle:hover {
-        transform: scale(1.08);
-      }
+.theme-toggle:hover {
+  transform: scale(1.08);
+}
 
-      .theme-toggle i svg{
-        width: 18px;
-        height: 18px;
-        stroke: var(--text);
-        transition: transform 0.25s ease;
-      }
+.theme-toggle i svg {
+  width: 18px;
+  height: 18px;
+  stroke: var(--text);
+  transition: transform 0.25s ease;
+}
 
-      .theme-toggle:hover i svg {
-        transform: rotate(20deg);
-      }
+.theme-toggle:hover i svg {
+  transform: rotate(20deg);
+}
 
-      /* -------------------------
+/* -------------------------
          FADE ANIMATION
       ------------------------- */
 
-      .fade {
-        opacity: 0;
-        transform: translateY(8px);
-        transition: all 0.6s ease;
-      }
+.fade {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: all 0.6s ease;
+}
 
-      .fade.visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
+.fade.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
