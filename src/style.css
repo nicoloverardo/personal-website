@@ -2,18 +2,12 @@
          SYSTEM FONT
       ------------------------- */
 
-      body {
-        font-family:
-          -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display",
-          system-ui, sans-serif;
-      }
-
       /* -------------------------
          THEME VARIABLES
       ------------------------- */
 
       :root {
-        --bg: #ffffff;
+        --bg: #fff;
         --text: #0f172a;
         --muted: #6b7280;
         --border: #e5e7eb;
@@ -35,11 +29,14 @@
       }
 
       body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display",
+          system-ui, sans-serif;
         margin: 0;
         background:
           radial-gradient(
             circle at 20% 10%,
-            rgba(0, 0, 0, 0.03),
+            rgb(0 0 0 / 3%),
             transparent 40%
           ),
           var(--bg);
@@ -50,7 +47,7 @@
           background 0.25s ease,
           color 0.25s ease;
         -webkit-font-smoothing: antialiased;
-        text-rendering: optimizeLegibility;
+        text-rendering: optimizelegibility;
       }
 
       p {
