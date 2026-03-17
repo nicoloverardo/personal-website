@@ -187,6 +187,8 @@
         margin-top: 40px;
         padding-top: 40px;
         border-top: 1px solid var(--border);
+        width: 100%;
+        min-width: 0;
       }
 
       .section-title {
@@ -217,6 +219,7 @@
         justify-content: center;
         cursor: pointer;
         transition: all 0.25s ease;
+        z-index: 1000;
       }
 
       .theme-toggle:hover {
