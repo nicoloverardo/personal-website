@@ -1,0 +1,22 @@
+{
+  "name": "personal-website",
+  "version": "1.0.0",
+  "description": "Personal website of Nicolò Verardo",
+  "scripts": {
+    "lint:js": "eslint src/script.js",
+    "lint:css": "stylelint src/style.css",
+    "lint:html": "htmlhint index.html",
+    "lint": "npm run lint:js && npm run lint:css && npm run lint:html",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.0.0",
+    "eslint": "^9.0.0",
+    "globals": "^15.0.0",
+    "htmlhint": "^1.1.4",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "stylelint": "^16.0.0",
+    "stylelint-config-standard": "^36.0.0"
+  }
+}
