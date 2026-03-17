@@ -1,6 +1,7 @@
 {
   "name": "personal-website",
   "version": "1.0.0",
+  "type": "module",
   "description": "Personal website of Nicolò Verardo",
   "scripts": {
     "lint:js": "eslint src/script.js",
