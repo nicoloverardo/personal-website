@@ -2,16 +2,16 @@
 
 lucide.createIcons();
 
-const toggle = document.getElementById("themeToggle");
-const icon = document.getElementById("themeIcon");
-
 function updateIcon(theme) {
+  const icon = document.getElementById("themeIcon");
+  if (!icon) return;
+
   // Remove old SVG inside the toggle
-  themeIcon.innerHTML = "";
+  icon.innerHTML = "";
   // Set new icon name on the <i>
-  themeIcon.setAttribute("data-lucide", theme === "dark" ? "sun" : "moon");
+  icon.setAttribute("data-lucide", theme === "dark" ? "sun" : "moon");
   // Re-render Lucide icon inside that container
-  lucide.createIcons({ parent: themeIcon });
+  lucide.createIcons({ parent: icon });
 }
 
 function setTheme(theme) {
@@ -32,10 +32,13 @@ if (saved) {
   );
 }
 
-toggle.onclick = () => {
-  const current = document.documentElement.getAttribute("data-theme");
-  setTheme(current === "dark" ? "light" : "dark");
-};
+const toggle = document.getElementById("themeToggle");
+if (toggle) {
+  toggle.onclick = () => {
+    const current = document.documentElement.getAttribute("data-theme");
+    setTheme(current === "dark" ? "light" : "dark");
+  };
+}
 
 /* FADE */
 
